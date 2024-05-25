@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+
+  <script>
+
+
+
+
+    const apellidosEspanoles = [
+  "García", "Rodríguez", "López", "Martínez", "Sánchez", "Pérez", "Martín", "González", "Hernández", "Díaz",
+  "Moreno", "Álvarez", "Romero", "Fernández", "Ruiz", "Jiménez", "Ramos", "Vázquez", "Dominguez", "Gutiérrez",
+  "Torres", "Serrano", "Molina", "Ortega", "Delgado", "Morales", "Suárez", "Ortiz", "Castro", "Rubio",
+  "Marín", "Santos", "Nuñez", "Iglesias", "Garrido", "Cabrera", "Vega", "León", "Cano", "Prieto",
+  "Mendoza", "Guerrero", "Flores", "Cruz", "Calvo", "Herrera", "Castillo", "Aguilar", "Valero", "Lara",
+  "Rojas", "Peña", "Soto", "Pardo", "Esteban", "Bravo", "Roldán", "Navarro", "Cortés", "Pascal",
+  "Campos", "Vidal", "Carmona", "Mora", "Vicente", "Santana", "Pereira", "Arias", "Salas", "Gallardo",
+  "Sáez", "Vega", "Solano", "Blanco", "Collado", "Reyes", "Pastor", "Bermúdez", "Parra", "Ferrer",
+  "Hidalgo", "Segura", "Expósito", "Guillén", "Rey", "Camacho", "Moya", "Sanz", "Olivares", "Navarro",
+  "Lorenzo", "Fuentes", "Redondo", "Ferrero", "Giménez", "Arias", "Mesa", "Fuster", "Román", "Aguilera",
+  "Benítez", "Cordero", "Ibáñez", "Otero", "Escudero", "Collado", "Solís", "Palacios", "Franco", "Reina",
+  "Beltrán", "Crespo", "Ojeda", "Ríos", "Del Rio", "Montes", "Barrios", "Felipe", "Álvaro", "Duran",
+  "Mesa", "Rivero", "Alonso", "Díaz", "Villanueva", "Peinado", "Herrero", "Villar", "Moraleda", "Aguayo",
+  "Guirao", "Maldonado", "Gálvez", "Jurado", "Ledesma", "Quintana", "Godoy", "Jaén", "Egea", "Montero",
+  "Gimeno", "Coronado", "Crespo", "Carrasco", "Pérez", "Aranda", "Gracia", "Rey", "Molina", "Arévalo",
+  "Haro", "Guzmán", "Vicente", "Miranda", "Salamanca", "Jara", "Vila", "Cortés", "Barros", "Salvador",
+  "Aguado", "Orellana", "Sobrino", "Palma", "Casado", "Guzmán", "Lara", "Barroso", "Bravo", "Castaño"];
+  
+  const apellidosJaponeses = [
+  "Suzuki", "Tanaka", "Watanabe", "Ito", "Yamamoto", "Nakamura", "Kobayashi", "Saito", "Takahashi", "Kato",
+  "Yoshida", "Yamada", "Sasaki", "Yamaguchi", "Matsumoto", "Inoue", "Kimura", "Hayashi", "Shimizu", "Ikeda",
+  "Abe", "Kojima", "Ishikawa", "Miyamoto", "Mori", "Fujita", "Ogawa", "Ishii", "Okada", "Kondo",
+  "Matsui", "Fukuda", "Hasegawa", "Ono", "Gojo", "Kaneko", "Muto", "Kondo", "Ishida", "Tamura",
+  "Nagai", "Sugiyama", "Nishimura", "Hirano", "Iwasaki", "Kudo", "Takagi", "Fujimoto", "Tamura", "Wakako",
+  "Hara", "Shibata", "Kudo", "Hirai", "Nakagawa", "Morita", "Ando", "Higashiyama", "Sugimoto", "Oda",
+  "Nakajima", "Maeda", "Sakamoto", "Yoshikawa", "Nakayama", "Kawaguchi", "Matsuda", "Harada", "Endo", "Otsuka",
+  "Hayakawa", "Takeda", "Komatsu", "Tajima", "Oka", "Ishikawa", "Shindo", "Asano", "Yamazaki", "Imai",
+  "Hosokawa", "Izumi", "Kaneko", "Hoshino", "Nagasaki", "Ohno", "Yano", "Yoshimura", "Takayama", "Ohashi",
+  "Imamura", "Yamamura", "Yamashita", "Tsuboi", "Sakai", "Kanayama", "Kishi", "Maruyama", "Kitamura", "Suda",
+  "Kubota", "Hattori", "Yasuda", "Oshima", "Ishihara", "Kikuchi", "Kinoshita", "Onishi", "Shiota", "Wakabayashi",
+  "Kanazawa", "Horiguchi", "Murata", "Ikegami", "Izumida", "Sugawara", "Furukawa", "Sakurai", "Maeda", "Kataoka",
+  "Tashiro", "Wakui", "Noguchi", "Ogura", "Tsunoda", "Takase", "Masuda", "Watanabe", "Otsuki", "Morimoto",
+  "Yoshizawa", "Murakami", "Yamashiro", "Hirose", "Kan", "Okkotsu", "Iijima", "Tachibana", "Nagata", "Hayashi",
+  "Matsuzawa", "Yoshikawa", "Shimada", "Yamaguchi", "Yoshino", "Yamaguchi", "Sasaki", "Takahashi", "Wada", "Nakayama",
+  "Suzuki", "Tanaka", "Watanabe", "Kobayashi", "Saito", "Yamamoto", "Nakamura", "Kato", "Yamada", "Ito"
+];
+
+const nombresIngleses = [
+"James", "Emma", "Olivia", "Noah", "Sophia", "Liam", "Ava", "Isabella", "Lucas", "Mia",
+"Amelia", "Mason", "Ethan", "Harper", "Evelyn", "Benjamin", "Abigail", "Alexander", "Aiden", "Charlotte",
+"Ella", "William", "Scarlett", "Madison", "Luna", "Jackson", "Avery", "Ella", "Aria", "Grayson",
+"Mateo", "Sofia", "Lily", "Lillian", "Nora", "Jack", "Evelyn", "Liam", "Oliver", "Chloe",
+"Harper", "Zoe", "Aria", "Leo", "Mila", "Carter", "Emily", "Isaac", "Hudson", "Lincoln",
+"Lucy", "Ethan", "Elena", "Madelyn", "Aubrey", "Adeline", "Hazel", "Aurora", "Zoey", "Levi",
+"Parker", "Grace", "Stella", "Victoria", "Claire", "Nathan", "Natalie", "Ellie", "Isabelle", "Eli",
+"Aaliyah", "Gabriel", "Sadie", "Julian", "Eva", "Kai", "Kinsley", "Allison", "Alexa", "Kylie",
+"Cameron", "Sarah", "Caroline", "Zachary", "Alice", "Aiden", "Ruby", "Madeline", "Khloe", "Xavier",
+"Joseph", "Eleanor", "Penelope", "Riley", "Kaylee", "Harrison", "Luke", "Maya", "Landon", "Gianna",
+"Anna", "Jackson", "Avery", "Eliana", "Ezra", "Madison", "Lucas", "Lily", "Eva", "Aria",
+"Sophie", "Logan", "Charlotte", "Wyatt", "Scarlett", "Quinn", "Claire", "Olivia", "Jackson", "Ella",
+"Penelope", "Skylar", "Bella", "Aurora", "Liam", "Grace", "Mia", "Zoe", "Nora", "Lincoln",
+"Oliver", "Chloe", "Lily", "Sophia", "Ethan", "Emma", "Ava", "Aiden", "Harper", "Noah",
+"Sophie", "Mila", "James", "Zoe", "Ella", "Lucas", "Aria", "Isabella", "Mason", "Liam",
+"Madison", "Avery", "Benjamin", "Charlotte", "Olivia", "William", "Scarlett", "Abigail", "Evelyn"];
+
+const nombresAlemanes = [
+"Lukas", "Sophie", "Leon", "Lena", "Benjamin", "Mia", "Paul", "Emma", "Jonas", "Hannah",
+"Luca", "Laura", "Finn", "Lara", "Maximilian", "Anna", "Tim", "Lea", "Moritz", "Lina",
+"Felix", "Sarah", "Julian", "Johanna", "Nico", "Marie", "Philipp", "Emilia", "Elias", "Sophia",
+"Anton", "Leonie", "Tom", "Amelie", "Fabian", "Clara", "Mats", "Paula", "Jakob", "Mara",
+"Jannik", "Isabella", "Luis", "Emily", "David", "Julia", "Oskar", "Zoe", "Nils", "Emily",
+"Simon", "Jasmin", "Niklas", "Matilda", "Jonathan", "Victoria", "Vincent", "Maja", "Linus", "Charlotte",
+"Samuel", "Anastasia", "Pauline", "Maja", "Philip", "Rosa", "Emil", "Sophie", "Leonard", "Nele",
+"Joel", "Melina", "Marlon", "Celine", "Bennet", "Paulina", "Nikolai", "Theresa", "Milo", "Caroline",
+"Robin", "Mara", "Tobias", "Isabel", "Julius", "Valentina", "Erik", "Vanessa", "Max", "Felicia",
+"Dominik", "Elisabeth", "Jan", "Pauline", "Samuel", "Jana", "Kai", "Jolina", "Julius", "Lotta",
+"Levi", "Helen", "Jannis", "Alina", "Maxim", "Alicia", "Liam", "Anna-Lena", "Lincoln", "Isabelle",
+"Finnley", "Johanna", "Theo", "Anja", "Luca", "Amalia", "Lennart", "Marleen", "Matti", "Alisa",
+"Noah", "Vivien", "Henry", "Lucia", "Emilio", "Annika", "Jona", "Frieda", "Marcel", "Leona",
+"Adrian", "Elisa", "Karl", "Livia", "Hannes", "Paula", "Marvin", "Thalia", "Jasper", "Henriette",
+"Ferdinand", "Emelie", "Darian", "Fiona", "Tristan", "Elena", "Marius", "Livia", "Fabio", "Felicitas",
+"Leonardo", "Melissa", "Samson", "Nora", "Bruno", "Cara", "Valentin", "Greta", "Till", "Milla",
+"Nikita", "Maria", "Arthur", "Selina", "Bastian", "Jara", "Heinrich", "Marieke", "Sebastian", "Lia"
+];
+
+    
+    function generarFechaAleatoria() {
+        var año = Math.floor(Math.random() * (2022 - 2000 + 1)) + 2000;
+        var mes = Math.floor(Math.random() * 12) + 1;
+        var dia = Math.floor(Math.random() * 31) + 1;
+        var hora = Math.floor(Math.random() * 24);
+        var minuto = Math.floor(Math.random() * 60);
+        var segundo = Math.floor(Math.random() * 60);
+
+        // Crea el objeto Date con los valores aleatorios
+        var fechaAleatoria = new Date(año, mes - 1, dia, hora, minuto, segundo);
+
+        // Formatea la fecha en el formato deseado (Año-Mes-Día)
+        var fechaFormateada = fechaAleatoria.toISOString().split("T")[0];
+
+        return fechaFormateada;
+      }
+
+
+
+
+    function generarAlumnos() {
+
+      var numeroVentas = document.getElementById("NumRegistros").value;
+      var select = document.getElementById("usuario");
+      var opcion = select.options[select.selectedIndex].value;
+      var salida = ` CREATE DATABASE IF NOT EXISTS sistema_escolar;<br> USE sistema_escolar;<br> CREATE TABLE IF NOT EXISTS ${opcion} (<br>  expediente INT(11) UNSIGNED NOT NULL UNIQUE,<br>  apellido1 VARCHAR(255) NOT NULL,<br>  apellido2 VARCHAR(255),<br>  nombres VARCHAR(255) NOT NULL,<br>  correo_inst VARCHAR(255) NOT NULL UNIQUE<br>, contrasena VARCHAR(100), fecha_nac DATE);<br> INSERT INTO ${opcion} (expediente, apellido1, apellido2, nombres, correo_inst, contrasena, fecha_nac) VALUES <br>`;
+      var matriculaAlumno = 222200017;
+      var matriculaAcademico = 777700020;
+      var matriculaAdmin = 999900020;
+
+      switch (opcion) {
+      case "alumnos":
+      for (let i = 0; i < numeroVentas; i++) {
+        salida += ` (${matriculaAlumno}, '${apellidosEspanoles[Math.floor(Math.random() * 149)]}', 
+        '${apellidosJaponeses[Math.floor(Math.random() * 149)]}', '${nombresIngleses[Math.floor(Math.random() * 149)]} 
+        ${nombresAlemanes[Math.floor(Math.random() * 149)]}', '${matriculaAlumno++}@unison.mx', MD5('123'), '`+generarFechaAleatoria()+`' ),`;
+
+        if (i == numeroVentas-1) {
+          salida = salida.slice(0, -1) + ";"; // Eliminar la coma y agregar punto y coma
+        }
+
+        salida += " <br>";
+      }
+      break;
+
+      case "academicos":
+        for (let i = 0; i < numeroVentas; i++) {
+          salida += ` (${matriculaAcademico}, '${apellidosEspanoles[Math.floor(Math.random() * 149)]}', 
+          '${apellidosJaponeses[Math.floor(Math.random() * 149)]}', '${nombresIngleses[Math.floor(Math.random() * 149)]} 
+          ${nombresAlemanes[Math.floor(Math.random() * 149)]}', '${matriculaAcademico++}@acadunison.mx', MD5('123'), '`+ generarFechaAleatoria()+`' ),`;
+
+          if (i == numeroVentas-1) {
+            salida = salida.slice(0, -1) + ";"; // Eliminar la coma y agregar punto y coma
+          }
+
+          salida += " <br>";
+        }
+      break;
+
+      case "administrativos":
+        for (let i = 0; i < numeroVentas; i++) {
+          salida += ` (${matriculaAdmin}, '${apellidosEspanoles[Math.floor(Math.random() * 149)]}', 
+          '${apellidosJaponeses[Math.floor(Math.random() * 149)]}', '${nombresIngleses[Math.floor(Math.random() * 149)]} 
+          ${nombresAlemanes[Math.floor(Math.random() * 149)]}', '${matriculaAdmin++}@adminunison.mx', MD5('123'), '`+ generarFechaAleatoria()+`' ),`;
+
+          if (i == numeroVentas-1) {
+            salida = salida.slice(0, -1) + ";"; // Eliminar la coma y agregar punto y coma
+          }
+
+          salida += " <br>";
+        }
+      break;
+
+    }
+
+      document.getElementById("salida").innerHTML = salida;
+    }
+
+
+    function descargarSQL() {
+      var contenidoSQL = document.getElementById("salida").innerText;
+      var blob = new Blob([contenidoSQL], { type: "text/plain" });
+      var url = window.URL.createObjectURL(blob);
+      var a = document.createElement("a");
+      a.href = url;
+      a.download = "alumnos.sql";
+      document.body.appendChild(a);
+      a.click();
+      document.body.removeChild(a);
+      window.URL.revokeObjectURL(url);
+    }
+
+
+
+
+  </script>
+</head>
+
+<body>
+
+  Número de alumnos/academicos/administrativos a generar:
+  <input type="number" id="NumRegistros" required/>
+  <select name="opcion" id="usuario">
+    <option value="alumnos">
+      Alumnos
+    </option>
+
+    <option value="academicos">
+      Académicos
+    </option>
+
+    <option value="administrativos">
+    Administrativos
+    </option></select>
+  <br>
+  <input type="button" value="Generar en SQL" onclick="generarAlumnos()" />
+  <input type="button" value="Descargar archivo SQL" onclick="descargarSQL()">
+  <p id="salida"></p>
+
+
+</body>
+
+</html>
